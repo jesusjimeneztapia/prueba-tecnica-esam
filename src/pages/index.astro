@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CardLink from '../components/CardLink.astro';
+
+const links = [
+	{ href: '/perfil-personal', icon: 'mdi-account-box-outline', title: 'perfil personal' },
+	{ href: '/registro-de-programas', icon: 'mdi-text-box-plus-outline', title: 'registro de programas' },
+	{ href: '/docentes', icon: 'mdi-account-search-outline', title: 'docentes' },
+	{ href: '/postulantes', icon: 'mdi-account-question-outline', title: 'postulantes' },
+	{ href: '/programas', icon: 'mdi-text-box-outline', title: 'programas' },
+	{ href: '/certificaciones-docentes', icon: 'mdi-certificate-outline', title: 'certificaciones docentes' },
+]
+---
+
+<Layout title="Menú principal">
+	<ul class="flex flex-wrap gap-6 justify-center max-w-5xl m-auto lg:gap-8">
+		{
+			links.map(({ href, icon, title }) => (
+				<CardLink href={href} icon={icon} title={title} />
+			))
+		}
+		<CardLink icon="mdi-account-box-outline" title="Prueba" />
+	</ul>
+</Layout>

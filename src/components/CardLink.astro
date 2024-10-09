@@ -1,0 +1,18 @@
+---
+interface Props {
+  href?: string;
+	icon: string;
+  title: string;
+}
+
+const { href = '#!', icon, title } = Astro.props
+---
+
+<li class="w-full transition-transform md:w-80 hover:scale-105 group">
+  <a href={href}>
+    <article class="text-center border rounded shadow pb-6 transition-all bg-white md:h-80 md:flex md:flex-col md:justify-center group-hover:bg-black/5 group-hover:shadow-md">
+      <span class={`mdi ${icon} text-[200px] leading-none`}></span>
+      <h3 class="uppercase text-lg font-bold">{title}</h3>
+    </article>
+  </a>
+</li>

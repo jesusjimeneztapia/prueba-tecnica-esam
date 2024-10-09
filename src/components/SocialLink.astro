@@ -1,0 +1,15 @@
+---
+interface Props {
+  href: string;
+	icon: string;
+}
+
+const { icon, href } = Astro.props;
+---
+
+<a
+  class="bg-white w-12 h-12 flex justify-center items-center rounded-full group transition-colors hover:bg-indigo-700"
+  href={href}
+  target="_blank">
+    <span class={`mdi ${icon} text-black text-2xl leading-none transition-colors group-hover:text-white`} />
+</a>

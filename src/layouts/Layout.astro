@@ -1,0 +1,35 @@
+---
+import '@mdi/font/css/materialdesignicons.min.css'
+import AppHeader from '../components/AppHeader.astro';
+import AppFooter from '../components/AppFooter.astro';
+import Container from '../components/Container.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/webp" href="/logo.webp" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Prueba Técnica ESAM | {title}</title>
+	</head>
+	<body>
+		<AppHeader />
+		<Container>
+			<h1 class="mt-16 text-3xl font-bold px-4 py-1.5">{title}</h1>
+			<main class="p-4 mb-36 lg:mb-24 lg:p-8">
+				<slot />
+			</main>
+		</Container>
+		<AppFooter />
+	</body>
+</html>
+

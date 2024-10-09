@@ -1,0 +1,23 @@
+---
+import Container from './Container.astro';
+import SocialLink from './SocialLink.astro';
+
+const socialLinks = [
+  { href: "https://www.facebook.com/esamcochabambasucursal", icon: "mdi-facebook" },
+  { href: "https://bo.linkedin.com/company/esamcochabambasucursal", icon: "mdi-linkedin" },
+  { href: "https://www.instagram.com/esamcochabambasucursal", icon: "mdi-instagram" },
+]
+---
+
+<footer class="bg-blue-950 px-4 py-3 text-white fixed w-full bottom-0 text-center z-50">
+  <Container class='lg:flex lg:items-center lg:justify-between'>
+    <ul class="flex p-3 justify-center gap-2">
+      {
+        socialLinks.map(({ href, icon }) => (
+          <li><SocialLink href={href} icon={icon} /></li>
+        ))
+      }
+    </ul>
+    <p class="p-3">© 2024 ESAM COCHABAMBA SUCURSAL</p>
+  </Container>
+</footer>
